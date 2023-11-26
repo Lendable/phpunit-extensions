@@ -5,9 +5,9 @@ includes:
   - phar://vendor/phpstan/phpstan/phpstan.phar/conf/bleedingEdge.neon
 
 parameters:
-    tmpDir: tmp/phpstan
-    paths:
-      - src
-      - tests
-    level: max
-    checkExplicitMixed: true
+  tmpDir: tmp/phpstan
+  paths:
+    - src
+    - tests
+  level: max
+  checkExplicitMixed: true
