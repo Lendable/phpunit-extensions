@@ -7,7 +7,7 @@
          bootstrap="vendor/autoload.php">
     <source>
         <include>
-            <directory>./lib/</directory>
+            <directory>./src/</directory>
         </include>
     </source>
     <php>
