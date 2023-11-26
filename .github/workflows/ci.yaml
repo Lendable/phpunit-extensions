@@ -1,0 +1,79 @@
+name: "CI"
+
+concurrency:
+  group: "ci-${{ github.head_ref || github.run_id }}"
+  cancel-in-progress: true
+
+on:
+  merge_group:
+  pull_request:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  ci:
+    name: "Execute (PHP ${{ matrix.php-version }} @ ${{ matrix.dependencies }} deps)"
+    runs-on: "ubuntu-latest"
+
+    strategy:
+      fail-fast: false
+      matrix:
+        dependencies:
+          - "lowest"
+          - "highest"
+          - "locked"
+        php-version:
+          - "8.1"
+          - "8.2"
+          - "8.3"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+        with:
+          show-progress: false
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "${{ matrix.php-version }}"
+          ini-values: memory_limit=-1
+
+      - name: "Cache Static Analysis Cache Files"
+        uses: actions/cache@v3
+        if: ${{ matrix.dependencies == 'locked' }}
+        with:
+          path: ./tmp
+          key: ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-${{ hashFiles('**/composer.lock') }}-${{ github.run_id }}-${{ github.run_number }}
+          restore-keys: |
+            ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-${{ hashFiles('**/composer.lock') }}-${{ github.run_id }}
+            ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-${{ hashFiles('**/composer.lock') }}-
+            ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-
+
+      - name: "Install dependencies"
+        uses: ramsey/composer-install@v2
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+
+      - name: "Validate Composer dependencies"
+        run: "composer validate"
+
+      - name: "Check Composer dependency licenses"
+        run: "composer licenses:check"
+
+      - name: "Run coding style"
+        if: ${{ matrix.dependencies == 'locked' && matrix.php-version == '8.1' }}
+        run: "composer code-style:check"
+
+      - name: "Run PHPStan"
+        if: ${{ matrix.dependencies == 'locked' }}
+        run: "composer phpstan"
+
+      - name: "Run Rector"
+        if: ${{ matrix.dependencies == 'locked' }}
+        run: "composer rector:check"
+
+      - name: "Tests"
+        run: "composer tests"
