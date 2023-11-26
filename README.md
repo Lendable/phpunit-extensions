@@ -2,7 +2,7 @@ Lendable PHPUnit Extensions
 ========================
 
 > [!WARNING]
-> This ibrary is still in early development.
+> This library is still in early development.
 
 ## Installation
 
