@@ -1,0 +1,86 @@
+{
+    "name": "lendable/phpunit-extensions",
+    "description": "Extensions to PHPUnit",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lendable Ltd",
+            "email": "dev@lendable.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "phpunit/phpunit": "^10.4"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.39",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-phpunit": "^1.3",
+        "rector/rector": "*",
+        "phpstan/phpstan-deprecation-rules": "^1.1.4",
+        "phpstan/phpstan-strict-rules": "^1.5.2",
+        "lendable/composer-license-checker": "^1.0.4",
+        "php-cs-fixer/shim": "^3.40.0"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Lendable\\PHPUnitExtensions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Fixtures\\Lendable\\PHPUnitExtensions\\": "tests/fixtures/",
+            "Tests\\Unit\\Lendable\\PHPUnitExtensions\\": "tests/unit/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        },
+        "platform": {
+            "php": "8.1.26"
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "ci": [
+            "@static-analysis",
+            "@tests:unit"
+        ],
+        "code-style:check": [
+            "PHP_CS_FIXER_FUTURE_MODE=1 php-cs-fixer fix --dry-run --diff --ansi"
+        ],
+        "code-style:fix": [
+            "PHP_CS_FIXER_FUTURE_MODE=1 php-cs-fixer fix --diff --ansi"
+        ],
+        "licenses:check": [
+            "composer-license-checker"
+        ],
+        "phpstan": [
+            "phpstan analyse --ansi --no-progress --memory-limit=-1"
+        ],
+        "phpunit:unit": [
+            "phpunit --colors --testsuite=unit"
+        ],
+        "rector:check": [
+            "rector --dry-run --ansi"
+        ],
+        "rector:fix": [
+            "rector --ansi"
+        ],
+        "static-analysis": [
+            "@composer validate",
+            "@code-style:check",
+            "@phpstan",
+            "@rector:check"
+        ],
+        "tests": [
+            "@tests:unit"
+        ],
+        "tests:unit": [
+            "@phpunit:unit"
+        ]
+    }
+}
