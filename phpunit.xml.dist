@@ -17,5 +17,9 @@
         <testsuite name="unit">
             <directory>./tests/unit/</directory>
         </testsuite>
+        <testsuite name="phpstan">
+            <directory>./tests/phpstan/</directory>
+            <exclude>./tests/phpstan/data/</exclude>
+        </testsuite>
     </testsuites>
 </phpunit>

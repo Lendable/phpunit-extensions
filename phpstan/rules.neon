@@ -1,0 +1,23 @@
+conditionalTags:
+  Lendable\PHPUnitExtensions\Phpstan\Rule\EnforceStrictMocking:
+    phpstan.rules.rule: %lendable_phpunit.enforceStrictMocking.enabled%
+
+parametersSchema:
+  lendable_phpunit: structure([
+    enforceStrictMocking: structure([
+      enabled: bool()
+      pardoned: listOf(string())
+    ])
+  ])
+
+parameters:
+  lendable_phpunit:
+    enforceStrictMocking:
+      enabled: true
+      pardoned: []
+
+services:
+  -
+    class: Lendable\PHPUnitExtensions\Phpstan\Rule\EnforceStrictMocking
+    arguments:
+      pardoned: %lendable_phpunit.enforceStrictMocking.pardoned%
