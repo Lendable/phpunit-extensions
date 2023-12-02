@@ -32,6 +32,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\Fixtures\\Lendable\\PHPUnitExtensions\\": "tests/fixtures/",
+            "Tests\\Phpstan\\Lendable\\PHPUnitExtensions\\": "tests/phpstan/",
             "Tests\\Unit\\Lendable\\PHPUnitExtensions\\": "tests/unit/"
         }
     },
@@ -61,6 +62,9 @@
         "phpstan": [
             "phpstan analyse --ansi --no-progress --memory-limit=-1"
         ],
+        "phpunit:phpstan": [
+            "phpunit --colors --testsuite=phpstan"
+        ],
         "phpunit:unit": [
             "phpunit --colors --testsuite=unit"
         ],
@@ -77,7 +81,8 @@
             "@rector:check"
         ],
         "tests": [
-            "@tests:unit"
+            "@tests:unit",
+            "@phpunit:phpstan"
         ],
         "tests:unit": [
             "@phpunit:unit"
