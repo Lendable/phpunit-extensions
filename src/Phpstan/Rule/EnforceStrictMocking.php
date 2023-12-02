@@ -48,6 +48,10 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
+        if ($node->isAbstract()) {
+            return [];
+        }
+
         $className = $node->namespacedName->toString();
         if (!\str_ends_with($className, 'Test')) {
             return [];
@@ -59,10 +63,6 @@ final class EnforceStrictMocking implements Rule
 
         $reflection = $scope->resolveTypeByName($node->namespacedName)->getClassReflection();
         if (!$reflection instanceof ClassReflection) {
-            return [];
-        }
-
-        if ($reflection->isAbstract()) {
             return [];
         }
 
