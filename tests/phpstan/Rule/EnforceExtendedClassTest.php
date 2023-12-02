@@ -28,6 +28,12 @@ final class EnforceExtendedClassTest extends RuleTestCase
     }
 
     #[Test]
+    public function does_not_report_abstract_test_directly_extending_phpunits_test_case(): void
+    {
+        $this->analyse([__DIR__.'/../data/AbstractTestCaseTest.php'], []);
+    }
+
+    #[Test]
     public function reports_test_indirectly_extending_phpunits_test_case(): void
     {
         $this->analyse([__DIR__.'/../data/IndirectlyExtendingTest.php'], [

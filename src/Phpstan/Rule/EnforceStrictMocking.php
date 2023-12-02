@@ -48,6 +48,10 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
+        if ($node->isAbstract()) {
+            return [];
+        }
+
         $className = $node->namespacedName->toString();
         if (!\str_ends_with($className, 'Test')) {
             return [];
