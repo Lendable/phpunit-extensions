@@ -139,6 +139,7 @@ return (new PhpCsFixer\Config())
     ])
     ->setRiskyAllowed(true)
     ->setUsingCache(true)
+    ->setCacheFile(__DIR__.'/tmp/.php-cs-fixer.cache')
     ->setIndent('    ')
     ->setLineEnding("\n")
     ->setFinder($finder);
