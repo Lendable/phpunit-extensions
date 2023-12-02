@@ -62,6 +62,10 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
+        if ($reflection->isAbstract()) {
+            return [];
+        }
+
         $parents = $reflection->getParentClassesNames();
         if (!\in_array(TestCase::class, $parents, true)) {
             return [];
