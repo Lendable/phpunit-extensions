@@ -14,7 +14,7 @@
         "phpunit/phpunit": "^10.4"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.41.0",
+        "ergebnis/composer-normalize": "^2.41.1",
         "lendable/composer-license-checker": "^1.0.4",
         "php-cs-fixer/shim": "^3.41.1",
         "phpstan/phpstan": "^1.10.50",
