@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "978338e7e855a71db57502bc141fe06f",
+    "content-hash": "10dfcef15c1264e6b1fe1f68cdf7f3a0",
     "packages": [
         {
             "name": "myclabs/deep-copy",
@@ -2224,16 +2224,16 @@
         },
         {
             "name": "php-cs-fixer/shim",
-            "version": "v3.41.1",
+            "version": "v3.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/shim.git",
-                "reference": "01cea2dca727100537bd63e28e06e49a475b54e9"
+                "reference": "6612ded23a774a376efe7332b4fc8333cdd324af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/01cea2dca727100537bd63e28e06e49a475b54e9",
-                "reference": "01cea2dca727100537bd63e28e06e49a475b54e9",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/6612ded23a774a376efe7332b4fc8333cdd324af",
+                "reference": "6612ded23a774a376efe7332b4fc8333cdd324af",
                 "shasum": ""
             },
             "require": {
@@ -2270,9 +2270,9 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/shim/issues",
-                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.41.1"
+                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.45.0"
             },
-            "time": "2023-12-10T19:59:57+00:00"
+            "time": "2023-12-30T02:07:42+00:00"
         },
         {
             "name": "phpstan/phpstan",
@@ -2540,16 +2540,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.18.12",
+            "version": "0.18.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "ed8d5352a3faa69e4a5e315896abffd4bc29c828"
+                "reference": "f8011a76d36aa4f839f60f3b4f97707d97176618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/ed8d5352a3faa69e4a5e315896abffd4bc29c828",
-                "reference": "ed8d5352a3faa69e4a5e315896abffd4bc29c828",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/f8011a76d36aa4f839f60f3b4f97707d97176618",
+                "reference": "f8011a76d36aa4f839f60f3b4f97707d97176618",
                 "shasum": ""
             },
             "require": {
@@ -2584,7 +2584,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.18.12"
+                "source": "https://github.com/rectorphp/rector/tree/0.18.13"
             },
             "funding": [
                 {
@@ -2592,7 +2592,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-04T08:47:30+00:00"
+            "time": "2023-12-20T16:08:01+00:00"
         },
         {
             "name": "symfony/console",
