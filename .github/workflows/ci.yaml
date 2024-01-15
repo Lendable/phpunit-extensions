@@ -52,6 +52,11 @@ jobs:
             ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-${{ hashFiles('**/composer.lock') }}-
             ${{ runner.OS }}-${{ matrix.php-version }}-static-analysis-
 
+      - name: "Update Composer platform version"
+        if: ${{ matrix.dependencies != 'locked' && matrix.php-version != '8.1' }}
+        shell: bash
+        run: "composer config platform.php ${{ matrix.php-version }}"
+
       - name: "Install dependencies"
         uses: ramsey/composer-install@v2
         with:
