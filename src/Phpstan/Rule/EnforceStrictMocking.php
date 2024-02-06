@@ -79,13 +79,13 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
-        $ruleErrorBuilder = RuleErrorBuilder::message(\sprintf(
-            'Class "%s" must either extend "%s" or use "%s" trait.',
-            $className,
-            StrictMockingTestCase::class,
-            StrictMockingTrait::class,
-        ));
-
-        return [$ruleErrorBuilder->build()];
+        return [
+            RuleErrorBuilder::message(\sprintf(
+                'Class "%s" must either extend "%s" or use "%s" trait.',
+                $className,
+                StrictMockingTestCase::class,
+                StrictMockingTrait::class,
+            ))->build(),
+        ];
     }
 }
