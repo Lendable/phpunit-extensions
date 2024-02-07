@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5892e740f309514c782c1e323a0cddc0",
+    "content-hash": "33635dd03fc96cbcb4e38095ff92c2ea",
     "packages": [
         {
             "name": "myclabs/deep-copy",
@@ -559,16 +559,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.0.2",
+            "version": "dev-issue-5691/attributes-for-controlling-test-double-creation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2f281e7e6776aea920cab5fc5a48d0fefbe1f39e"
+                "reference": "6c53031b9676e6733677784688b30f731ffdcfad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2f281e7e6776aea920cab5fc5a48d0fefbe1f39e",
-                "reference": "2f281e7e6776aea920cab5fc5a48d0fefbe1f39e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6c53031b9676e6733677784688b30f731ffdcfad",
+                "reference": "6c53031b9676e6733677784688b30f731ffdcfad",
                 "shasum": ""
             },
             "require": {
@@ -607,7 +607,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "11.0-dev"
+                    "dev-main": "11.1-dev"
                 }
             },
             "autoload": {
@@ -639,7 +639,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.0.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/issue-5691/attributes-for-controlling-test-double-creation"
             },
             "funding": [
                 {
@@ -655,7 +655,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-04T09:09:14+00:00"
+            "time": "2024-02-07T10:51:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -3321,9 +3321,18 @@
             "time": "2023-12-10T16:15:48+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "phpunit/phpunit",
+            "version": "dev-issue-5691/attributes-for-controlling-test-double-creation",
+            "alias": "11.0.0",
+            "alias_normalized": "11.0.0.0"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpunit/phpunit": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

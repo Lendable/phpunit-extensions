@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "phpunit/phpunit": "^11.0"
+        "phpunit/phpunit": "dev-issue-5691/attributes-for-controlling-test-double-creation as 11.0.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.42.0",
@@ -33,6 +33,7 @@
         "psr-4": {
             "Tests\\Fixtures\\Lendable\\PHPUnitExtensions\\": "tests/fixtures/",
             "Tests\\Phpstan\\Lendable\\PHPUnitExtensions\\": "tests/phpstan/",
+            "Tests\\Rector\\Lendable\\PHPUnitExtensions\\": "tests/rector/",
             "Tests\\Unit\\Lendable\\PHPUnitExtensions\\": "tests/unit/"
         }
     },
@@ -65,6 +66,9 @@
         "phpunit:phpstan": [
             "phpunit --colors --testsuite=phpstan"
         ],
+        "phpunit:rector": [
+            "phpunit --colors --testsuite=rector"
+        ],
         "phpunit:unit": [
             "phpunit --colors --testsuite=unit"
         ],
@@ -82,7 +86,8 @@
         ],
         "tests": [
             "@tests:unit",
-            "@phpunit:phpstan"
+            "@phpunit:phpstan",
+            "@phpunit:rector"
         ],
         "tests:unit": [
             "@phpunit:unit"
