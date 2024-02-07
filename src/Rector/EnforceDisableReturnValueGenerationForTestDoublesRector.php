@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lendable\PHPUnitExtensions\Rector;
 
 use PhpParser\Node;
@@ -18,8 +20,7 @@ final class EnforceDisableReturnValueGenerationForTestDoublesRector extends Abst
         private readonly PhpAttributeAnalyzer $attributeAnalyzer,
         private readonly TestsNodeAnalyzer $testsNodeAnalyzer,
         private readonly PhpAttributeGroupFactory $attributeGroupFactory,
-    ) {
-    }
+    ) {}
 
     public function getRuleDefinition(): RuleDefinition
     {
@@ -28,24 +29,24 @@ final class EnforceDisableReturnValueGenerationForTestDoublesRector extends Abst
             [
                 new CodeSample(
                     <<<'CODE_SAMPLE'
-namespace Tests\Foo;
+                        namespace Tests\Foo;
 
-use PHPUnit\Framework\TestCase;
+                        use PHPUnit\Framework\TestCase;
 
-class FooTest extends TestCase {
-}
-CODE_SAMPLE
-                    , <<<'CODE_SAMPLE'
-namespace Tests\Foo;
+                        class FooTest extends TestCase {
+                        }
+                        CODE_SAMPLE,
+                    <<<'CODE_SAMPLE'
+                        namespace Tests\Foo;
 
-use PHPUnit\Framework\TestCase;
+                        use PHPUnit\Framework\TestCase;
 
-#[\PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles]
-class FooTest extends TestCase {
-}
-CODE_SAMPLE
+                        #[\PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles]
+                        class FooTest extends TestCase {
+                        }
+                        CODE_SAMPLE
                 ),
-            ]
+            ],
         );
     }
 
@@ -54,11 +55,9 @@ CODE_SAMPLE
         return [Class_::class];
     }
 
-    /**
-     * @param Class_ $node
-     */
     public function refactor(Node $node): ?Class_
     {
+        /** @var Class_ $node */
         if (!$this->testsNodeAnalyzer->isInTestClass($node)) {
             return null;
         }

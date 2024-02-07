@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Rector\Lendable\PHPUnitExtensions\Rector;
 
 use Lendable\PHPUnitExtensions\Rector\EnforceDisableReturnValueGenerationForTestDoublesRector;
+use Lendable\PHPUnitExtensions\StrictMocking;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Rector\Testing\PHPUnit\AbstractRectorTestCase;
@@ -12,6 +13,8 @@ use Rector\Testing\PHPUnit\AbstractRectorTestCase;
 #[CoversClass(EnforceDisableReturnValueGenerationForTestDoublesRector::class)]
 final class EnforceDisableReturnValueGenerationForTestDoublesRectorTest extends AbstractRectorTestCase
 {
+    use StrictMocking;
+
     public function provideConfigFilePath(): string
     {
         return __DIR__.'/config/configured_rule.php';
@@ -25,6 +28,6 @@ final class EnforceDisableReturnValueGenerationForTestDoublesRectorTest extends 
 
     public static function provideData(): \Iterator
     {
-        return self::yieldFilesFromDirectory(__DIR__ . '/Fixture');
+        return self::yieldFilesFromDirectory(__DIR__.'/Fixture');
     }
 }
