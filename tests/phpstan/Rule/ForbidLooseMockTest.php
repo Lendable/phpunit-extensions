@@ -35,6 +35,17 @@ final class ForbidLooseMockTest extends RuleTestCase
     }
 
     #[Test]
+    public function reports_strict_mocking_test_case_with_a_test_coming_from_a_trait(): void
+    {
+        $this->analyse([__DIR__.'/../data/TestThroughTraitTest.php', __DIR__.'/../data/TraitWithTest.php'], [
+            [
+                'Forbidden call to "createMock", use "createStrictMock" instead.',
+                14,
+            ],
+        ]);
+    }
+
+    #[Test]
     public function does_not_report_non_strict_mocking_test_case(): void
     {
         $this->analyse([__DIR__.'/../data/TestCaseTest.php'], []);
