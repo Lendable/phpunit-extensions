@@ -15,7 +15,7 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.42.0",
-        "lendable/composer-license-checker": "^1.1.0",
+        "lendable/composer-license-checker": "^1.1.1",
         "php-cs-fixer/shim": "^3.51.0",
         "phpstan/phpstan": "^1.10.59",
         "phpstan/phpstan-deprecation-rules": "^1.1.4",
