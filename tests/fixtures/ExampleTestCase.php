@@ -10,7 +10,7 @@ final class ExampleTestCase extends TestCase
 {
     public function exerciseMockCreationWithoutMethodsConfigured(): void
     {
-        $mock = $this->createMock(ExampleInterface::class);
+        $mock = $this->createStrictMock(ExampleInterface::class);
 
         $mock->foo();
     }

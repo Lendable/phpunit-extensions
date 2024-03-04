@@ -21,5 +21,8 @@
             <directory>./tests/phpstan/</directory>
             <exclude>./tests/phpstan/data/</exclude>
         </testsuite>
+        <testsuite name="rector">
+            <directory>./tests/rector/</directory>
+        </testsuite>
     </testsuites>
 </phpunit>

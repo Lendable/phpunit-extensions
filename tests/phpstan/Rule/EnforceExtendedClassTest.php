@@ -22,7 +22,7 @@ final class EnforceExtendedClassTest extends RuleTestCase
         $this->analyse([__DIR__.'/../data/TestCaseTest.php'], [
             [
                 $this->errorMessageFor(TestCaseTest::class),
-                9,
+                10,
             ],
         ]);
     }
@@ -39,7 +39,7 @@ final class EnforceExtendedClassTest extends RuleTestCase
         $this->analyse([__DIR__.'/../data/IndirectlyExtendingTest.php'], [
             [
                 $this->errorMessageFor(IndirectlyExtendingTest::class),
-                7,
+                9,
             ],
         ]);
     }

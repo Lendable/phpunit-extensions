@@ -1,6 +1,8 @@
 conditionalTags:
   Lendable\PHPUnitExtensions\Phpstan\Rule\EnforceStrictMocking:
     phpstan.rules.rule: %lendable_phpunit.enforceStrictMocking.enabled%
+  Lendable\PHPUnitExtensions\Phpstan\Rule\ForbidLooseMock:
+    phpstan.rules.rule: %lendable_phpunit.enforceStrictMocking.enabled%
 
 parametersSchema:
   lendable_phpunit: structure([
@@ -21,3 +23,5 @@ services:
     class: Lendable\PHPUnitExtensions\Phpstan\Rule\EnforceStrictMocking
     arguments:
       pardoned: %lendable_phpunit.enforceStrictMocking.pardoned%
+  -
+    class: Lendable\PHPUnitExtensions\Phpstan\Rule\ForbidLooseMock

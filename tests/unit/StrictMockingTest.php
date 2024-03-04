@@ -24,7 +24,7 @@ final class StrictMockingTest extends TestCase
 
             public function exercise(): void
             {
-                $mock = $this->createMock(ExampleInterface::class);
+                $mock = $this->createStrictMock(ExampleInterface::class);
                 $mock->method('bar')->willReturn(42);
 
                 $mock->foo();

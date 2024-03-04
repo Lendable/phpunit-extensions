@@ -6,12 +6,11 @@ namespace Tests\Phpstan\Lendable\PHPUnitExtensions\data;
 
 use PHPUnit\Framework\Attributes\Test;
 
-final class IndirectStrictMockingTraitTest extends StrictMockingTraitTest
+trait TraitWithTest
 {
     #[Test]
     public function loose_mock(): void
     {
         $this->createMock(\ArrayAccess::class);
-        $this->createStrictMock(\ArrayAccess::class);
     }
 }

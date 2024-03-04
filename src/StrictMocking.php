@@ -14,10 +14,18 @@ use PHPUnit\Framework\TestCase;
  */
 trait StrictMocking
 {
-    final protected function createMock(string $originalClassName): MockObject
+    /**
+     * @template T of object
+     *
+     * @param class-string<T> $originalClassName
+     *
+     * @return MockObject&T
+     */
+    final protected function createStrictMock(string $originalClassName): MockObject
     {
         $mock = (new MockObjectGenerator())->testDouble(
             $originalClassName,
+            true,
             true,
             callOriginalConstructor: false,
             callOriginalClone: false,
