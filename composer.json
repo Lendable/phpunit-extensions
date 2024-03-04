@@ -11,17 +11,17 @@
     ],
     "require": {
         "php": "^8.2",
-        "phpunit/phpunit": "dev-issue-5691/attributes-for-controlling-test-double-creation as 11.0.0"
+        "phpunit/phpunit": "dev-main#b092517ed8afac69e44f0d10bfd89effe36d5a73"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.42.0",
-        "lendable/composer-license-checker": "^1.1.0",
-        "php-cs-fixer/shim": "^3.49.0",
-        "phpstan/phpstan": "^1.10.57",
+        "lendable/composer-license-checker": "^1.1.1",
+        "php-cs-fixer/shim": "^3.51.0",
+        "phpstan/phpstan": "^1.10.59",
         "phpstan/phpstan-deprecation-rules": "^1.1.4",
-        "phpstan/phpstan-phpunit": "^1.3.15",
+        "phpstan/phpstan-phpunit": "^1.3.16",
         "phpstan/phpstan-strict-rules": "^1.5.2",
-        "rector/rector": "1.0.0"
+        "rector/rector": "1.0.1"
     },
     "minimum-stability": "stable",
     "autoload": {
