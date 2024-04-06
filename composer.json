@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "phpunit/phpunit": "dev-main#b092517ed8afac69e44f0d10bfd89effe36d5a73"
+        "phpunit/phpunit": "^11.1.1"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.42.0",
