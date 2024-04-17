@@ -13,6 +13,7 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
+use PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -68,6 +69,10 @@ final class EnforceStrictMocking implements Rule
 
         $parents = $reflection->getParentClassesNames();
         if (!\in_array(TestCase::class, $parents, true)) {
+            return [];
+        }
+
+        if (\count($reflection->getNativeReflection()->getAttributes(DisableReturnValueGenerationForTestDoubles::class)) > 0) {
             return [];
         }
 
