@@ -72,7 +72,7 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
-        if (\count($reflection->getNativeReflection()->getAttributes(DisableReturnValueGenerationForTestDoubles::class)) > 0) {
+        if ($reflection->getNativeReflection()->getAttributes(DisableReturnValueGenerationForTestDoubles::class) !== []) {
             return [];
         }
 
