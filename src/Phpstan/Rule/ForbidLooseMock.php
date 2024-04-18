@@ -12,6 +12,7 @@ use PhpParser\Node\Identifier;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
+use PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -48,6 +49,10 @@ final readonly class ForbidLooseMock implements Rule
             !\in_array(StrictMockingTestCase::class, $parents, true)
             && !isset($reflection->getTraits(true)[StrictMockingTrait::class])
         ) {
+            return [];
+        }
+
+        if ($reflection->getNativeReflection()->getAttributes(DisableReturnValueGenerationForTestDoubles::class) !== []) {
             return [];
         }
 
