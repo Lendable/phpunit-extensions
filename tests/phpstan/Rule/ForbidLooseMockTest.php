@@ -63,6 +63,18 @@ final class ForbidLooseMockTest extends RuleTestCase
         $this->analyse([__DIR__.'/../data/TestCaseWithAttributeTest.php'], []);
     }
 
+    #[Test]
+    public function does_not_report_test_extending_our_test_case_using_disabling_of_return_value_generation_attribute(): void
+    {
+        $this->analyse([__DIR__.'/../data/OurTestCaseExtendingAndUsingAttributeTest.php'], []);
+    }
+
+    #[Test]
+    public function does_not_report_test_using_trait_and_using_disabling_of_return_value_generation_attribute(): void
+    {
+        $this->analyse([__DIR__.'/../data/OurTraitUsingAndUsingAttributeTest.php'], []);
+    }
+
     protected function getRule(): ForbidLooseMock
     {
         return new ForbidLooseMock();
