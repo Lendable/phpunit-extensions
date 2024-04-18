@@ -13,6 +13,7 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
+use PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -71,6 +72,10 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
+        if ($reflection->getNativeReflection()->getAttributes(DisableReturnValueGenerationForTestDoubles::class) !== []) {
+            return [];
+        }
+
         if (\in_array(StrictMockingTestCase::class, $parents, true)) {
             return [];
         }
@@ -79,13 +84,13 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
-        $ruleErrorBuilder = RuleErrorBuilder::message(\sprintf(
-            'Class "%s" must either extend "%s" or use "%s" trait.',
-            $className,
-            StrictMockingTestCase::class,
-            StrictMockingTrait::class,
-        ));
-
-        return [$ruleErrorBuilder->build()];
+        return [
+            RuleErrorBuilder::message(\sprintf(
+                'Class "%s" must either extend "%s" or use "%s" trait.',
+                $className,
+                StrictMockingTestCase::class,
+                StrictMockingTrait::class,
+            ))->build(),
+        ];
     }
 }
