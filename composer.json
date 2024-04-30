@@ -49,7 +49,7 @@
     "scripts": {
         "ci": [
             "@static-analysis",
-            "@tests:unit"
+            "@tests"
         ],
         "code-style:check": [
             "PHP_CS_FIXER_FUTURE_MODE=1 php-cs-fixer fix --dry-run --diff --ansi"
@@ -85,12 +85,9 @@
             "@rector:check"
         ],
         "tests": [
-            "@tests:unit",
+            "@phpunit:unit",
             "@phpunit:phpstan",
             "@phpunit:rector"
-        ],
-        "tests:unit": [
-            "@phpunit:unit"
         ]
     }
 }
