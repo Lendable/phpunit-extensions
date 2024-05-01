@@ -62,6 +62,10 @@ final class EnforceDisableReturnValueGenerationForTestDoublesRector extends Abst
             return null;
         }
 
+        if ($node->isAbstract()) {
+            return null;
+        }
+
         if ($this->attributeAnalyzer->hasPhpAttribute($node, DisableReturnValueGenerationForTestDoubles::class)) {
             return null;
         }
