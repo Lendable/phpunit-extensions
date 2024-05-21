@@ -11,6 +11,7 @@ use PhpParser\Node\Name;
 use PhpParser\Node\Stmt\Class_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ClassReflection;
+use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles;
@@ -84,6 +85,7 @@ final class EnforceStrictMocking implements Rule
             return [];
         }
 
+        /** @var list<IdentifierRuleError> */
         return [
             RuleErrorBuilder::message(\sprintf(
                 'Class "%s" must either extend "%s" or use "%s" trait.',
