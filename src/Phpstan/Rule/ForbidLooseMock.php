@@ -10,6 +10,7 @@ use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Identifier;
 use PHPStan\Analyser\Scope;
+use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles;
@@ -56,6 +57,7 @@ final readonly class ForbidLooseMock implements Rule
             return [];
         }
 
+        /** @var list<IdentifierRuleError> */
         return [RuleErrorBuilder::message('Forbidden call to "createMock", use "createStrictMock" instead.')->build()];
     }
 }
