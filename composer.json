@@ -16,12 +16,12 @@
     "require-dev": {
         "ergebnis/composer-normalize": "^2.43.0",
         "lendable/composer-license-checker": "^1.2.1",
-        "php-cs-fixer/shim": "^3.59.3",
-        "phpstan/phpstan": "^1.11.7",
+        "php-cs-fixer/shim": "^3.61.1",
+        "phpstan/phpstan": "^1.11.9",
         "phpstan/phpstan-deprecation-rules": "^1.2.0",
         "phpstan/phpstan-phpunit": "^1.4.0",
         "phpstan/phpstan-strict-rules": "^1.6.0",
-        "rector/rector": "1.2.1"
+        "rector/rector": "1.2.2"
     },
     "minimum-stability": "stable",
     "autoload": {
