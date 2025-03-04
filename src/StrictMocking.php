@@ -23,16 +23,22 @@ trait StrictMocking
      */
     final protected function createStrictMock(string $originalClassName): MockObject
     {
+        // Equivalent of PHPUnit\Framework\TestCase::createMock()'s call with return value generation disabled.
         $mock = (new MockObjectGenerator())->testDouble(
             $originalClassName,
-            true,
-            true,
-            callOriginalConstructor: false,
-            callOriginalClone: false,
-            cloneArguments: false,
-            allowMockingUnknownTypes: false,
-            // Override: disable return value generation (default: true).
-            returnValueGeneration: false,
+            true, /* mockObject */
+            true, /* markAsMockObject */
+            [], /* methods */
+            [], /* arguments */
+            '', /* mockClassName */
+            false, /* callOriginalConstructor */
+            false, /* callOriginalClone */
+            true, /* callAutoload */
+            false, /* cloneArguments */
+            false, /* callOriginalMethods */
+            null, /* proxyTarget */
+            false, /* allowMockingUnknownTypes */
+            false, /* Override: returnValueGeneration disabled (default: enabled) */
         );
 
         \assert($mock instanceof $originalClassName);
