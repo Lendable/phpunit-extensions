@@ -4,6 +4,7 @@ includes:
   - vendor/phpstan/phpstan-strict-rules/rules.neon
   - phar://vendor/phpstan/phpstan/phpstan.phar/conf/bleedingEdge.neon
   - phpstan/rules.neon
+  - phpstan-baseline.neon
 
 parameters:
   tmpDir: tmp/phpstan
