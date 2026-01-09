@@ -10,18 +10,18 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "phpunit/phpunit": "^11.1"
+        "php": "^8.3",
+        "phpunit/phpunit": "^12.5"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.43.0",
+        "ergebnis/composer-normalize": "^2.45",
         "lendable/composer-license-checker": "^1.2.1",
-        "php-cs-fixer/shim": "^3.59.3",
-        "phpstan/phpstan": "^1.11.7",
-        "phpstan/phpstan-deprecation-rules": "^1.2.0",
-        "phpstan/phpstan-phpunit": "^1.4.0",
-        "phpstan/phpstan-strict-rules": "^1.6.0",
-        "rector/rector": "1.2.1"
+        "php-cs-fixer/shim": "^3.92",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "rector/rector": "2.3.0"
     },
     "minimum-stability": "stable",
     "autoload": {
@@ -42,7 +42,7 @@
             "ergebnis/composer-normalize": true
         },
         "platform": {
-            "php": "8.2.14"
+            "php": "8.3.0"
         },
         "sort-packages": true
     },
@@ -62,6 +62,9 @@
         ],
         "phpstan": [
             "phpstan analyse --ansi --no-progress --memory-limit=-1"
+        ],
+        "phpstan:baseline": [
+            "phpstan analyse --ansi --no-progress --memory-limit=-1 --generate-baseline"
         ],
         "phpunit:phpstan": [
             "phpunit --colors --testsuite=phpstan"

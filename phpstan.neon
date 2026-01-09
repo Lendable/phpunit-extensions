@@ -19,3 +19,9 @@ parameters:
     enforceStrictMocking:
       pardoned:
         - Tests\Unit\Lendable\PHPUnitExtensions\TestCaseTest
+  ignoreErrors:
+    - message: '/(Call|Instantiation) (to|of).+internal.+PHPUnit.+/'
+      path: %currentWorkingDirectory%/src
+
+    - message: '/(Access|Call|Instantiation) (to|of).+internal.+PHPUnit.+/'
+      path: %currentWorkingDirectory%/tests
