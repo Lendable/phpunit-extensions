@@ -27,24 +27,18 @@ trait StrictMocking
         $mock = (new MockObjectGenerator())->testDouble(
             $originalClassName,
             true, /* mockObject */
-            true, /* markAsMockObject */
             [], /* methods */
             [], /* arguments */
             '', /* mockClassName */
             false, /* callOriginalConstructor */
             false, /* callOriginalClone */
-            true, /* callAutoload */
-            false, /* cloneArguments */
-            false, /* callOriginalMethods */
-            null, /* proxyTarget */
-            false, /* allowMockingUnknownTypes */
             false, /* Override: returnValueGeneration disabled (default: enabled) */
         );
 
         \assert($mock instanceof $originalClassName);
         \assert($mock instanceof MockObject);
 
-        $this->registerMockObject($mock);
+        $this->registerMockObject($originalClassName, $mock);
 
         Event\Facade::emitter()->testCreatedMockObject($originalClassName);
 

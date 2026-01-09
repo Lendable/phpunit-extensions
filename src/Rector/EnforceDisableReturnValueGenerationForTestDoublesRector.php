@@ -44,7 +44,7 @@ final class EnforceDisableReturnValueGenerationForTestDoublesRector extends Abst
                         #[\PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles]
                         class FooTest extends TestCase {
                         }
-                        CODE_SAMPLE
+                        CODE_SAMPLE,
                 ),
             ],
         );
