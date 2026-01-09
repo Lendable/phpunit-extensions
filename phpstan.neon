@@ -4,7 +4,6 @@ includes:
   - vendor/phpstan/phpstan-strict-rules/rules.neon
   - phar://vendor/phpstan/phpstan/phpstan.phar/conf/bleedingEdge.neon
   - phpstan/rules.neon
-  - phpstan-baseline.neon
 
 parameters:
   tmpDir: tmp/phpstan
@@ -20,3 +19,9 @@ parameters:
     enforceStrictMocking:
       pardoned:
         - Tests\Unit\Lendable\PHPUnitExtensions\TestCaseTest
+  ignoreErrors:
+    - message: '/(Call|Instantiation) (to|of).+internal.+PHPUnit.+/'
+      path: %currentWorkingDirectory%/src
+
+    - message: '/(Access|Call|Instantiation) (to|of).+internal.+PHPUnit.+/'
+      path: %currentWorkingDirectory%/tests
