@@ -14,14 +14,14 @@
         "phpunit/phpunit": "^12.5"
     },
     "require-dev": {
-        "ergebnis/composer-normalize": "^2.45",
-        "lendable/composer-license-checker": "^1.2.1",
-        "php-cs-fixer/shim": "^3.92",
-        "phpstan/phpstan": "^2.1",
-        "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "phpstan/phpstan-strict-rules": "^2.0",
-        "rector/rector": "2.3.0"
+        "ergebnis/composer-normalize": "^2.48.2",
+        "lendable/composer-license-checker": "^1.4.0",
+        "php-cs-fixer/shim": "^3.92.5",
+        "phpstan/phpstan": "^2.1.36",
+        "phpstan/phpstan-deprecation-rules": "^2.0.3",
+        "phpstan/phpstan-phpunit": "^2.0.11",
+        "phpstan/phpstan-strict-rules": "^2.0.7",
+        "rector/rector": "2.3.4"
     },
     "minimum-stability": "stable",
     "autoload": {
