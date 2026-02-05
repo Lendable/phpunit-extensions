@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683" # v4
+        uses: "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd" # v6
         with:
           show-progress: false
 
@@ -42,7 +42,7 @@ jobs:
           ini-values: memory_limit=-1
 
       - name: "Cache Static Analysis Cache Files"
-        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5
         if: ${{ matrix.dependencies == 'locked' }}
         with:
           path: ./tmp
