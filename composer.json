@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "php": "^8.3",
-        "phpunit/phpunit": "^12.5"
+        "php": "^8.4",
+        "phpunit/phpunit": "^13.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.45",
@@ -42,7 +42,7 @@
             "ergebnis/composer-normalize": true
         },
         "platform": {
-            "php": "8.3.0"
+            "php": "8.4.1"
         },
         "sort-packages": true
     },
