@@ -17,11 +17,11 @@
         "ergebnis/composer-normalize": "^2.45",
         "lendable/composer-license-checker": "^1.2.1",
         "php-cs-fixer/shim": "^3.92",
-        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan": "^2.1.39",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0.16",
         "phpstan/phpstan-strict-rules": "^2.0",
-        "rector/rector": "2.3.0"
+        "rector/rector": "^2.3.2"
     },
     "minimum-stability": "stable",
     "autoload": {
