@@ -9,6 +9,7 @@ use PHPUnit\Framework\Attributes\Test;
 final class IndirectStrictMockingTraitTest extends StrictMockingTraitTest
 {
     #[Test]
+    #[\Override]
     public function loose_mock(): void
     {
         $this->createMock(\ArrayAccess::class);

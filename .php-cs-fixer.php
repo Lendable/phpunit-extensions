@@ -9,7 +9,7 @@ return (new PhpCsFixer\Config())
     ->setRules([
         '@PER-CS' => true,
         '@PER-CS:risky' => true,
-        '@PHP8x3Migration' => true,
+        '@PHP8x4Migration' => true,
         '@DoctrineAnnotation' => true,
         'align_multiline_comment' => true,
         'array_indentation' => true,
