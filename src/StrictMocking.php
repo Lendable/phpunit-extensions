@@ -24,7 +24,7 @@ trait StrictMocking
     final protected function createStrictMock(string $originalClassName): MockObject
     {
         // Equivalent of PHPUnit\Framework\TestCase::createMock()'s call with return value generation disabled.
-        $mock = (new MockObjectGenerator())->testDouble(
+        $mock = new MockObjectGenerator()->testDouble(
             $originalClassName,
             true, /* mockObject */
             [], /* methods */

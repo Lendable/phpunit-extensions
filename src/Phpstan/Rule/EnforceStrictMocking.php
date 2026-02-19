@@ -20,12 +20,12 @@ use PHPUnit\Framework\TestCase;
 /**
  * @implements Rule<Class_>
  */
-final class EnforceStrictMocking implements Rule
+final readonly class EnforceStrictMocking implements Rule
 {
     /**
      * @var array<class-string, int>
      */
-    private readonly array $pardoned;
+    private array $pardoned;
 
     /**
      * @param list<class-string> $pardoned

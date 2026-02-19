@@ -14,11 +14,11 @@ return static function (RectorConfig $rector): void {
     $rector->cacheClass(FileCacheStorage::class);
     $rector->cacheDirectory(__DIR__.'/tmp/rector');
     $rector->paths([__DIR__.'/src', __DIR__.'/tests']);
-    $rector->phpVersion(PhpVersion::PHP_81);
+    $rector->phpVersion(PhpVersion::PHP_84);
     $rector->phpstanConfig(__DIR__.'/phpstan-rector.neon');
     $rector->sets([
         SetList::CODE_QUALITY,
-        LevelSetList::UP_TO_PHP_81,
+        LevelSetList::UP_TO_PHP_84,
         PHPUnitSetList::PHPUNIT_100,
     ]);
 };
