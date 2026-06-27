@@ -34,14 +34,14 @@ jobs:
           show-progress: false
 
       - name: "Install PHP"
-        uses: "shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1" # v2
+        uses: "shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240" # v2
         with:
           coverage: "none"
           php-version: "${{ matrix.php-version }}"
           ini-values: memory_limit=-1
 
       - name: "Cache Static Analysis Cache Files"
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         if: ${{ matrix.dependencies == 'locked' }}
         with:
           path: ./tmp
