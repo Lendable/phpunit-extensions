@@ -68,16 +68,3 @@ return static function (RectorConfig $rector): void {
     $rector->rule(EnforceDisableReturnValueGenerationForTestDoublesRector::class);
 };
 ```
-
-Running Rector will then add the attribute where it is missing:
-
-```diff
- namespace Tests\Foo;
-
- use PHPUnit\Framework\TestCase;
-
-+#[\PHPUnit\Framework\Attributes\DisableReturnValueGenerationForTestDoubles]
- class FooTest extends TestCase
- {
- }
-```
