@@ -1,0 +1,19 @@
+README.md
+  s_09652aa3a96ce0::t_d7f81c5687ea79 53-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.19",
+  "base_commit_sha": "7e5d55cad51f7f76c1ba6de3e76af13b78e2b577",
+  "prompts": {},
+  "sessions": {
+    "s_09652aa3a96ce0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9ffa6467-c5b6-4923-91ce-c31220df9b34",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marcin Michalski <marcin.michalski@lendable.co.uk>"
+    }
+  }
+}
