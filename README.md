@@ -63,8 +63,9 @@ Register the rule in your Rector configuration:
 use Lendable\PHPUnitExtensions\Rector\EnforceDisableReturnValueGenerationForTestDoublesRector;
 use Rector\Config\RectorConfig;
 
-return static function (RectorConfig $rector): void {
+return RectorConfig::configure()
     // ...
-    $rector->rule(EnforceDisableReturnValueGenerationForTestDoublesRector::class);
-};
+    ->withRules([EnforceDisableReturnValueGenerationForTestDoublesRector::class]);
 ```
+
+With the closure-style configuration, register it via `$rectorConfig->rule(EnforceDisableReturnValueGenerationForTestDoublesRector::class)`.
