@@ -50,3 +50,22 @@ lendable_phpunit:
         pardoned:
             - Foo\Bar\MyTest
 ```
+
+## Rector
+
+A [Rector](https://getrector.com/) rule is provided to automate adopting strict mocking across a test suite.
+
+`Lendable\PHPUnitExtensions\Rector\EnforceDisableReturnValueGenerationForTestDoublesRector` adds PHPUnit's `#[DisableReturnValueGenerationForTestDoubles]` attribute to test classes that do not already have it. Abstract classes are skipped, since the attribute only has an effect when placed on the concrete test class.
+
+Register the rule in your Rector configuration:
+
+```php
+use Lendable\PHPUnitExtensions\Rector\EnforceDisableReturnValueGenerationForTestDoublesRector;
+use Rector\Config\RectorConfig;
+
+return RectorConfig::configure()
+    // ...
+    ->withRules([EnforceDisableReturnValueGenerationForTestDoublesRector::class]);
+```
+
+With the closure-style configuration, register it via `$rectorConfig->rule(EnforceDisableReturnValueGenerationForTestDoublesRector::class)`.
