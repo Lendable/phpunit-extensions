@@ -1,0 +1,30 @@
+name: "Zizmor"
+
+on:
+  merge_group:
+  pull_request:
+  push:
+    branches:
+      - "main"
+
+permissions: {}
+
+jobs:
+  zizmor:
+    name: "Audit workflows"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: read
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7
+        with:
+          persist-credentials: false
+          show-progress: false
+
+      - name: "Run Zizmor"
+        uses: zizmorcore/zizmor-action@5f14fd08f7cf1cb1609c1e344975f152c7ee938d # v0.5.6
+        with:
+          advanced-security: false
+          annotations: true
+          version: v1.29.0

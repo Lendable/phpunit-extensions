@@ -11,6 +11,8 @@ on:
     branches:
       - "main"
 
+permissions: {}
+
 jobs:
   lint-actionlint:
     name: "Lint workflows"
@@ -21,6 +23,7 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7
         with:
+          persist-credentials: false
           show-progress: false
 
       - name: "Install actionlint"
@@ -28,14 +31,18 @@ jobs:
         run: bash <(curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/scripts/download-actionlint.bash) 1.7.12
 
       - name: "Run actionlint"
+        env:
+          ACTIONLINT: "${{ steps.actionlint.outputs.executable }}"
         run: |
           echo "::add-matcher::.github/actionlint-matcher.json"
           trap 'echo "::remove-matcher owner=actionlint::"' EXIT
-          "${{ steps.actionlint.outputs.executable }}" -color
+          "$ACTIONLINT" -color
 
   ci:
     name: "Execute (PHP ${{ matrix.php-version }} @ ${{ matrix.dependencies }} deps)"
     runs-on: "ubuntu-latest"
+    permissions:
+      contents: read
 
     strategy:
       fail-fast: false
@@ -52,6 +59,7 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7
         with:
+          persist-credentials: false
           show-progress: false
 
       - name: "Install PHP"
