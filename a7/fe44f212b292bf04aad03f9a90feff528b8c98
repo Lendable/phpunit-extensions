@@ -1,0 +1,36 @@
+README.md
+  s_8a4b19b983df1d::t_78d5bec13571a7 72-96
+local/php_conf.ini
+  s_8a4b19b983df1d::t_dd70f2f38d6d6c 1-8
+local/Dockerfile
+  s_8a4b19b983df1d::t_9d2b4a38cf06d6 1-38
+local/xdebug-entrypoint.sh
+  s_8a4b19b983df1d::t_df7c48f8f15595 1-33
+local/.env.dist
+  s_8a4b19b983df1d::t_75075e484667e3 1-2
+local/docker-compose.yaml
+  s_8a4b19b983df1d::t_d3ed8184121d62 1-15
+.gitignore
+  s_8a4b19b983df1d::t_7f2662aa101ae4 1
+.gitattributes
+  s_8a4b19b983df1d::t_d5f59136efccdb 9
+  s_8a4b19b983df1d::t_33a1b8768ea0da 2
+Makefile
+  s_8a4b19b983df1d::t_09544478677498 1-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "a7fe44f212b292bf04aad03f9a90feff528b8c98",
+  "prompts": {},
+  "sessions": {
+    "s_8a4b19b983df1d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "175cddd6-51fc-461a-a3fa-17138dcec90b",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Marcin Michalski <marcin.michalski@lendable.co.uk>"
+    }
+  }
+}
