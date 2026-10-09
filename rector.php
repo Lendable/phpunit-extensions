@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
@@ -11,7 +10,6 @@ use Rector\ValueObject\PhpVersion;
 
 return static function (RectorConfig $rector): void {
     $rector->parallel();
-    $rector->cacheClass(FileCacheStorage::class);
     $rector->cacheDirectory(__DIR__.'/tmp/rector');
     $rector->paths([__DIR__.'/src', __DIR__.'/tests']);
     $rector->skip([__DIR__.'/tests/phpstan/data']);
