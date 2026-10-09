@@ -14,6 +14,7 @@ return static function (RectorConfig $rector): void {
     $rector->cacheClass(FileCacheStorage::class);
     $rector->cacheDirectory(__DIR__.'/tmp/rector');
     $rector->paths([__DIR__.'/src', __DIR__.'/tests']);
+    $rector->skip([__DIR__.'/tests/phpstan/data']);
     $rector->phpVersion(PhpVersion::PHP_84);
     $rector->phpstanConfig(__DIR__.'/phpstan-rector.neon');
     $rector->sets([
