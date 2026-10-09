@@ -19,6 +19,6 @@ return static function (RectorConfig $rector): void {
     $rector->sets([
         SetList::CODE_QUALITY,
         LevelSetList::UP_TO_PHP_84,
-        PHPUnitSetList::PHPUNIT_100,
+        PHPUnitSetList::COMPOSER_BASED,
     ]);
 };
