@@ -1,0 +1,19 @@
+.github/actionlint.yaml
+  s_38022cdb52f625::t_901ec6dadf894a 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2a9d9dcc05fe2b5fd149d906c47ef39c5ae36f0e",
+  "prompts": {},
+  "sessions": {
+    "s_38022cdb52f625": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f5a68651-e822-430c-9597-ff1480367863",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marcin Michalski <marcin.michalski@lendable.co.uk>"
+    }
+  }
+}
