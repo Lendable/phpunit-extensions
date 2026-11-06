@@ -1,0 +1,23 @@
+.github/workflows/ci.yaml
+  s_204e856db6faf2::t_b51c00b3ad36eb 22,53,58,65
+.github/workflows/conventional-commits.yaml
+  s_204e856db6faf2::t_73605abe6ce608 21
+.github/workflows/release.yaml
+  s_204e856db6faf2::t_68d81a0d1890d4 22,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5cfcdd0df2b464fd2d554fba2fb49113d4bcd805",
+  "prompts": {},
+  "sessions": {
+    "s_204e856db6faf2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "359594a7-759d-4b2e-abff-f65f3454c3d3",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Marcin Michalski <evulmastah@gmail.com>"
+    }
+  }
+}
