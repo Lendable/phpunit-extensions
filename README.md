@@ -30,6 +30,15 @@ Will be stubbed to return `0`. This library ships two mechanisms to simplify dis
 * If you extend from `Lendable\PHPUnitExtensions\TestCase`, this will be enabled. If you can just extend from this class it is the simplest way to opt-in to all functionality.
 * The trait `Lendable\PHPUnitExtensions\StrictMocking` is provided to enable this alone. If you are forced into using another abstract `*TestCase` (e.g. from a vendor) this can be added into the class hierarchy.
 
+### Property garbage collection
+
+PHPUnit keeps every test case object until the whole suite has finished, so anything a test stores in its properties (a booted kernel's services, database and message broker connections, large fixtures) stays alive for the rest of the run. In long suites this grows memory and can exhaust file descriptors.
+
+After each test, all of the test case's properties are unset so their values can be freed. Static and readonly properties are left alone. The hook runs after every other `#[After]` method and `tearDown()`, so those can still use the properties.
+
+* If you extend from `Lendable\PHPUnitExtensions\TestCase`, this is enabled.
+* The trait `Lendable\PHPUnitExtensions\PropertyGarbageCollection` enables this alone.
+
 ## PHPStan
 
 A PHPStan extension is provided to enforce usage of features of this library.
