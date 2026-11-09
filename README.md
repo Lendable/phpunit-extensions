@@ -34,7 +34,11 @@ Will be stubbed to return `0`. This library ships two mechanisms to simplify dis
 
 PHPUnit keeps every test case object until the whole suite has finished, so anything a test stores in its properties (a booted kernel's services, database and message broker connections, large fixtures) stays alive for the rest of the run. In long suites this grows memory and can exhaust file descriptors.
 
-After each test, all of the test case's properties are unset so their values can be freed. Static and readonly properties are left alone. The hook runs after every other `#[After]` method and `tearDown()`, so those can still use the properties.
+When the next test starts, all of the previous test case's properties are unset so their values can be freed, then garbage cycles are collected. Releasing one test late means `tearDown()`, `#[After]` methods and `onNotSuccessfulTest()` can still use the properties, and a failing after hook does not stop the release. The last test's properties are freed when the process ends.
+
+Static, readonly and hooked properties are left alone.
+
+Override `collectsGarbageCyclesAfterRelease()` to return `false` if a cycle collection after every test is too costly for your suite.
 
 * If you extend from `Lendable\PHPUnitExtensions\TestCase`, this is enabled.
 * The trait `Lendable\PHPUnitExtensions\PropertyGarbageCollection` enables this alone.

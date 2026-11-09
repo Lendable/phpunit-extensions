@@ -20,6 +20,7 @@ final class PropertyReleaser
                 if (
                     $property->isStatic()
                     || $property->isReadOnly()
+                    || $property->hasHooks()
                     || $property->getDeclaringClass()->getName() !== $class->getName()
                 ) {
                     continue;
@@ -31,7 +32,5 @@ final class PropertyReleaser
                 }, null, $class->getName())($object);
             }
         }
-
-        \gc_collect_cycles();
     }
 }

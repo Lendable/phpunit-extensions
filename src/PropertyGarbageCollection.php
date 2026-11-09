@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lendable\PHPUnitExtensions;
 
-use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -12,9 +12,14 @@ use PHPUnit\Framework\TestCase;
  */
 trait PropertyGarbageCollection
 {
-    #[After(\PHP_INT_MIN)]
-    final protected function releaseProperties(): void
+    #[Before(\PHP_INT_MAX)]
+    protected function releasePreviousTestProperties(): void
     {
-        PropertyReleaser::release($this);
+        PreviousTestReleaser::releasePreviousAndHold($this, $this->collectsGarbageCyclesAfterRelease());
+    }
+
+    protected function collectsGarbageCyclesAfterRelease(): bool
+    {
+        return true;
     }
 }

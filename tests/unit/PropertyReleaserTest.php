@@ -32,7 +32,7 @@ final class PropertyReleaserTest extends TestCase
     }
 
     #[Test]
-    public function keeps_readonly_and_static_properties(): void
+    public function keeps_readonly_static_and_hooked_properties(): void
     {
         $holder = new PropertyHolder();
 
@@ -40,5 +40,7 @@ final class PropertyReleaserTest extends TestCase
 
         self::assertTrue($holder->isInitialized('readonly'));
         self::assertNotNull(PropertyHolder::$static);
+        self::assertTrue($holder->isInitialized('hooked'));
+        self::assertTrue($holder->virtual);
     }
 }

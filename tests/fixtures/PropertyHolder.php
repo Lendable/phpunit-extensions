@@ -17,6 +17,14 @@ final class PropertyHolder extends PropertyHolderParent
      */
     public array $array;
 
+    public \stdClass $hooked {
+        set => $value;
+    }
+
+    public bool $virtual {
+        get => true;
+    }
+
     private \stdClass $private;
 
     public function __construct(
@@ -27,6 +35,7 @@ final class PropertyHolder extends PropertyHolderParent
         self::$static = new \stdClass();
         $this->public = new \stdClass();
         $this->array = [new \stdClass()];
+        $this->hooked = new \stdClass();
         $this->private = new \stdClass();
         $this->privateInTrait = new \stdClass();
     }

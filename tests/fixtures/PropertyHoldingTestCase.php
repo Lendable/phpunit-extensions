@@ -6,13 +6,13 @@ namespace Tests\Fixtures\Lendable\PHPUnitExtensions;
 
 use Lendable\PHPUnitExtensions\TestCase;
 
-final class PropertyHoldingTestCase extends TestCase
+class PropertyHoldingTestCase extends TestCase
 {
     public ?\stdClass $service = null;
 
-    public function exerciseRelease(): void
+    public function start(): void
     {
-        $this->releaseProperties();
+        $this->releasePreviousTestProperties();
     }
 
     public function isServiceInitialized(): bool
