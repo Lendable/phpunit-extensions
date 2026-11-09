@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/Lendable/phpunit-extensions/compare/0.5.0...0.6.0) (2026-11-09)
+
+
+### Features
+
+* Release test case properties after each test ([#179](https://github.com/Lendable/phpunit-extensions/issues/179)) ([e1498f8](https://github.com/Lendable/phpunit-extensions/commit/e1498f87c9bb5fd18b0f7e589e88cef5c7681b88))
+
 ## [0.5.0](https://github.com/Lendable/phpunit-extensions/compare/0.4.0...0.5.0) (2026-02-19)
 
 
