@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88f7298d9a1efc8f5ffea9c7224c3060",
+    "content-hash": "616f3335e261710228b1dd43233c45b6",
     "packages": [
         {
             "name": "myclabs/deep-copy",
@@ -2660,16 +2660,16 @@
         },
         {
             "name": "php-cs-fixer/shim",
-            "version": "v3.95.31",
+            "version": "v3.95.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/shim.git",
-                "reference": "ecc5bd6c3a8151488dc6b9a81502655726bd0f1b"
+                "reference": "c95a290fc4486d4a68fb75f88d7b166f4141686a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/ecc5bd6c3a8151488dc6b9a81502655726bd0f1b",
-                "reference": "ecc5bd6c3a8151488dc6b9a81502655726bd0f1b",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/shim/zipball/c95a290fc4486d4a68fb75f88d7b166f4141686a",
+                "reference": "c95a290fc4486d4a68fb75f88d7b166f4141686a",
                 "shasum": ""
             },
             "require": {
@@ -2706,7 +2706,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/shim/issues",
-                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.95.31"
+                "source": "https://github.com/PHP-CS-Fixer/shim/tree/v3.95.32"
             },
             "funding": [
                 {
@@ -2714,8 +2714,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-16T21:05:48+00:00",
-            "published-time": "2026-11-16T21:05:58+00:00"
+            "time": "2026-11-17T18:09:48+00:00",
+            "published-time": "2026-11-17T18:09:58+00:00"
         },
         {
             "name": "phpstan/phpstan",
